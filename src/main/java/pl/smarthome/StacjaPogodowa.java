@@ -12,11 +12,16 @@ public class StacjaPogodowa {
         this.insolation = insolation;
     }
 
+
     public StacjaPogodowa getInfo() {
         StacjaPogodowa pogoda = new StacjaPogodowa();
         Random generator = new Random();
-        temp = generator.nextInt((35) -25);
-        insolation = "słonecznie";
+        temp = generator.nextInt(61)-25;
+        if (generator.nextBoolean()) {
+            insolation = "słonecznie";
+        }else {
+            insolation="pochmurnie";
+        }
         return pogoda;
     }
 
